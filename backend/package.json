@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Express + Mongoose REST API for Sagar's Portfolio (layered: routes → controllers → services → models).",
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@portfolio/shared": "*",
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/node": "^22.10.0",
+    "tsx": "^4.20.7",
+    "typescript": "^5.9.3"
+  }
+}

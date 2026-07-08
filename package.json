@@ -1,0 +1,17 @@
+{
+  "name": "sagar-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Full-stack developer portfolio — Next.js frontend, Express API, MongoDB.",
+  "workspaces": [
+    "shared",
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev:frontend": "npm run dev --workspace frontend",
+    "dev:backend": "npm run dev --workspace backend",
+    "build:frontend": "npm run build --workspace frontend",
+    "build:backend": "npm run build --workspace backend"
+  }
+}
