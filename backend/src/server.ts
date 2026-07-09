@@ -1,6 +1,11 @@
+import dns from "node:dns";
 import { createApp } from "./app";
 import { env } from "./config/env";
 import { connectDb } from "./config/db";
+
+// Prefer IPv4 for outbound connections — the host has no IPv6 route, and
+// Node otherwise tries IPv6 first (breaks SMTP to Gmail, external APIs).
+dns.setDefaultResultOrder("ipv4first");
 
 async function start() {
   await connectDb(env.mongoUri);
