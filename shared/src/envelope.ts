@@ -1,5 +1,5 @@
-// AD-3: the one API response envelope every endpoint returns.
-// AD-12: defined once here, consumed by both frontend and backend.
+// The one API response envelope every endpoint returns.
+// Defined once here, consumed by both frontend and backend.
 
 /** A successful API response. */
 export type ApiSuccess<T> = { data: T };
