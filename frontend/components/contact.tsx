@@ -6,7 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { contactMessageSchema, type ContactMessageInput } from "@portfolio/shared";
 import { site } from "@/content/site";
-import { API_URL } from "@/lib/api";
 import { SocialIcon } from "./social-icons";
 import { Reveal } from "./reveal";
 
@@ -26,7 +25,7 @@ export function Contact() {
 
   const mutation = useMutation({
     mutationFn: async (data: ContactMessageInput) => {
-      const res = await fetch(`${API_URL}/api/messages`, {
+      const res = await fetch("/api/messages", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -40,7 +39,7 @@ export function Contact() {
 
   const aiDraft = useMutation({
     mutationFn: async () => {
-      const res = await fetch(`${API_URL}/api/ai/draft`, {
+      const res = await fetch("/api/ai/draft", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ intent, name: getValues("name") || undefined }),
