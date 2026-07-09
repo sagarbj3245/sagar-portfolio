@@ -13,6 +13,8 @@ export const env = {
   isProd: process.env.NODE_ENV === "production",
 
   // Contact-form email notification (optional — form still stores messages without it).
+  // Brevo HTTP API preferred in production; Gmail SMTP works for local dev.
+  brevoApiKey: process.env.BREVO_API_KEY ?? "",
   smtpUser: process.env.SMTP_USER ?? "",
   smtpPass: process.env.SMTP_PASS ?? "",
   contactTo: process.env.CONTACT_TO ?? "sagarbj001@gmail.com",
