@@ -10,6 +10,9 @@ import { errorHandler, notFoundHandler } from "./middleware/error";
 export function createApp() {
   const app = express();
 
+  // Behind Render's proxy in production — needed for correct client IPs (rate limiting).
+  app.set("trust proxy", 1);
+
   app.use(cors({ origin: env.corsOrigin, credentials: true }));
   app.use(cookieParser());
   app.use(requestLogger);

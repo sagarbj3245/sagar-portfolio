@@ -9,7 +9,9 @@ function cookieOptions() {
   return {
     httpOnly: true,
     secure: env.isProd,
-    sameSite: "lax" as const,
+    // In production the frontend (Vercel) and API (Render) are on different
+    // domains, so the auth cookie must be SameSite=None to travel cross-site.
+    sameSite: env.isProd ? ("none" as const) : ("lax" as const),
     maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     path: "/",
   };
@@ -31,7 +33,8 @@ export function login(req: Request, res: Response) {
 }
 
 export function logout(_req: Request, res: Response) {
-  res.clearCookie(COOKIE, { path: "/" });
+  const { maxAge: _maxAge, ...opts } = cookieOptions();
+  res.clearCookie(COOKIE, opts);
   res.json(ok({ ok: true }));
 }
 

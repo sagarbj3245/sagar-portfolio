@@ -4,11 +4,9 @@
   "private": true,
   "description": "Express + Mongoose REST API for Sagar's Portfolio (layered: routes → controllers → services → models).",
   "type": "module",
-  "main": "dist/server.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "tsc",
-    "start": "node dist/server.js",
+    "start": "tsx src/server.ts",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -17,6 +15,7 @@
   "dependencies": {
     "@portfolio/shared": "*",
     "cookie-parser": "^1.4.7",
+    "tsx": "^4.20.7",
     "cors": "^2.8.6",
     "dotenv": "^17.2.4",
     "express": "^5.2.1",
@@ -35,7 +34,6 @@
     "@types/nodemailer": "^8.0.1",
     "@types/supertest": "^7.2.0",
     "supertest": "^7.2.2",
-    "tsx": "^4.20.7",
     "typescript": "^5.9.3",
     "vitest": "^4.1.10"
   }
