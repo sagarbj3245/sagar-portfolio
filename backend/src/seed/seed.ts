@@ -69,19 +69,6 @@ const projects = [
     order: 1,
   },
   {
-    slug: "seatalk",
-    title: "SeaTalk — Real-Time Chat & Media App",
-    category: ProjectCategory.RealTime,
-    summary: "Real-time direct + group messaging with media upload and archiving.",
-    description:
-      "A real-time messaging app built with Node.js, Express, MySQL, and Socket.IO. Supports direct and group chat, media upload to AWS S3, JWT authentication, and scheduled chat archiving via node-cron. Demonstrates real-time systems, socket rooms, and cloud media handling end to end.",
-    techTags: ["Node.js", "Express", "MySQL", "Socket.IO", "AWS S3", "JWT", "node-cron"],
-    coverImage: "/projects/seatalk.webp",
-    liveUrl: null,
-    githubUrl: "https://github.com/sagarbj3245/SeaTalk",
-    order: 2,
-  },
-  {
     slug: "expensetracker",
     title: "ExpenseTracker",
     category: ProjectCategory.FullStack,
